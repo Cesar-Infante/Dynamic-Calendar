@@ -21,7 +21,7 @@ textarea {
   color: white;
   border-radius: 0;
   border-bottom: 10px solid black;
-  background-image: url('/Assets/images/background.jpg');
+  background-image: url('../Assets/images/background.jpg');
 }
 
 .description {
