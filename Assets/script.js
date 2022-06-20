@@ -13,7 +13,7 @@ THEN each timeblock is color coded to indicate whether it is in the past, presen
 use moment.js to check if the current time in hours is in the past present or future and cordinate it by colors */
 var momentToday = moment().format('H');
 var momentHours = ["09", "10", "11", "12", "13", "14", "15", "16", "17"];
-
+var id = ["09", "10", "11", "12", "13", "14", "15", "16", "17"];
 
 for (var i = 0; i < hours.length; i++) {
 
@@ -36,6 +36,7 @@ for (var i = 0; i < hours.length; i++) {
     row.append(dailyTime);
     row.append(mainInput);
     row.append(saveBtn);
+    row.attr('id', id[i]);
 
     if (momentToday > momentHours[i]) {
         console.log('time is in the past ' + momentHours[i]);
@@ -58,31 +59,33 @@ for (var i = 0; i < hours.length; i++) {
 // When I click into mainInput and go to the textarea 
 //I want an event listener on the button to save my text input
 
-// saveBtn.on('click', function() {
-//     var textInput = $('textarea').value;
-//     var varname = localStorage.getItem('textInput');
-//     localStorage.setItem('textInput', textInput);
-//     console.log(varname)
-// });
+$(".saveBtn").on('click', function() {
+    var textInput = $('.input').val();
+    localStorage.setItem('textInput', textInput);
+    var varname = localStorage.getItem('textInput');
+    console.log(textInput)
+});
 
 
-var storageInput = $('.mainInput');
-console.log(storageInput)
-var text = $('textarea');
-console.log(text)
-var button = $('.fa-solid');
-console.log(button)
+// var storageInput = $('.mainInput');
+// console.log(storageInput)
+// var text = $('textarea');
+// console.log(text)
+// var button = $('.fa-solid');
+// console.log(button)
 
-storageInput.on('input', letter => {
-    text.textContent = letter.target.value
-    console.log(letter.target.value)
-})
+// storageInput.on('input', letter => {
+//     text.textContent = letter.target.value
+//     console.log(letter.target.value)
+// })
 
-var saveToLocalStorage = function() {
-    localStorage.setItem('textinput', text.content)
-}
+// var saveToLocalStorage = function() {
+//     localStorage.setItem('textinput', text.content)
+// }
 
-button.on('click', saveToLocalStorage)
+// button.on('click', saveToLocalStorage)
+
+
 
 
 
