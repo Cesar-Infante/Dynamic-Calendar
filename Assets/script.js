@@ -44,7 +44,7 @@ for (var i = 0; i < hours.length; i++) {
     if (momentToday === momentHours[i]) {
         console.log('time is present ' + momentHours[i]);
         row.css('background-color', 'white')
-        
+
     }
     if (momentToday < momentHours[i]) {
         console.log('time is in the future ' + momentHours[i]);
@@ -57,6 +57,32 @@ for (var i = 0; i < hours.length; i++) {
 //THEN I can enter an event
 // When I click into mainInput and go to the textarea 
 //I want an event listener on the button to save my text input
+
+// saveBtn.on('click', function() {
+//     var textInput = $('textarea').value;
+//     var varname = localStorage.getItem('textInput');
+//     localStorage.setItem('textInput', textInput);
+//     console.log(varname)
+// });
+
+
+var storageInput = $('.mainInput');
+console.log(storageInput)
+var text = $('textarea');
+console.log(text)
+var button = $('.fa-solid');
+console.log(button)
+
+storageInput.on('input', letter => {
+    text.textContent = letter.target.value
+    console.log(letter.target.value)
+})
+
+var saveToLocalStorage = function() {
+    localStorage.setItem('textinput', text.content)
+}
+
+button.on('click', saveToLocalStorage)
 
 
 
