@@ -36,11 +36,11 @@ function displayRows() {
         dailyTime.append('<p class="time-block">' + hours[i] + '</p>');
 
         var mainInput = $('<div>');
-        mainInput.attr('class', 'col-8 col-sm-8 col-md-9 mainInput');
+        mainInput.attr('class', 'col-7 col-sm-8 col-md-8 mainInput');
         mainInput.append('<textarea class="input" placeholder="Plan your day right!.. Input Here"></textarea>');
 
         var saveBtn = $('<div>');
-        saveBtn.attr('class', 'col-2 col-sm-1 col-md-1');
+        saveBtn.attr('class', 'col-1 col-sm-1 col-md-1');
         saveBtn.append('<button class="saveBtn"><i class="fa-solid fa-lock">');
 
         container.append(row);
@@ -74,7 +74,7 @@ displayRows();
 //I want an event listener on the button to save my text input
 //-----------------------------------------
 
-/* Saving the text input to local storage and then displaying it in the main input. */
+// Saving the text input to local storage and then displaying it in the main input.
 $(".saveBtn").on('click', function() {
     var textInput = $('.input').val();
     localStorage.setItem('textInput', textInput);
